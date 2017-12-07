@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Browser Complete",
+    "version": "0.1-dev",
+    "description": "Get code completion from browser!",
+
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "nativeMessaging"
+    ],
+
+    "applications": {
+        "gecko": {
+            "id": "browser_complete@multitude.hk"
+        }
+    },
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content_script.js"]
+        }
+    ]
+}

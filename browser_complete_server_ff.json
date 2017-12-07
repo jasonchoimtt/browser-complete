@@ -1,0 +1,7 @@
+{
+    "name": "browser_complete_server",
+    "description": "Browser Complete Server",
+    "path": "/Users/jason/w/browser-complete/browser_complete_server.py",
+    "type": "stdio",
+    "allowed_extensions": ["browser_complete@multitude.hk"]
+}
