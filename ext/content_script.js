@@ -13,8 +13,9 @@ browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 const para = elem.textContent;
                 for (const line of para.split('\n')) {
                     const value = line.trim();
-                    if (value.startsWith(req.query))
-                        collected.add(value);
+                    if (!value.startsWith(req.query)) continue;
+                    if (value.length <= 3) continue;
+                    collected.add(value);
                 }
             }
         } else {
@@ -25,8 +26,9 @@ browser.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 const re = /\b\w+\b/g;
                 for (let m; (m = re.exec(para)); ) {
                     const [value] = m;
-                    if (value.startsWith(req.query))
-                        collected.add(value);
+                    if (!value.startsWith(req.query)) continue;
+                    if (value.length <= 3) continue;
+                    collected.add(value);
                 }
             }
         }
